@@ -1,0 +1,17 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "Portfolio of Dodiya Vinesh",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index"
+  },
+  "keywords": [
+    "portfolio",
+    "dodiya",
+    "vinesh"
+  ],
+  "author": "Vinesh",
+  "license": "ISC",
+  "dependencies": {}
+}
