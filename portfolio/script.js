@@ -1,4 +1,15 @@
 window.addEventListener("load", function () {
+  document.body.onclick = function (e) {
+    // console.log(e.x + " " + e.pageX + " " + e.clientX);
+    // console.log(e.y + " " + e.pageY + " " + e.clientY);
+    var clickanim = document.querySelector(".clickanim");
+    clickanim.style.left = e.pageX - 20 + "px";
+    clickanim.style.top = e.pageY - 20 + "px";
+    clickanim.style.display = "flex";
+    setTimeout(() => {
+      clickanim.style.display = "none";
+    }, 500);
+  };
   winResize();
   window.addEventListener("resize", winResize);
   //title animation
