@@ -1,19 +1,20 @@
 {
-  "name": "portfolio",
-  "version": "1.0.0",
-  "description": "Portfolio of Dodiya Vinesh",
-  "main": "index.js",
+  "name": "vite-portfolio",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
   "scripts": {
-    "start": "node index"
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
   },
-  "keywords": [
-    "portfolio",
-    "dodiya",
-    "vinesh"
-  ],
-  "author": "Vinesh",
-  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^22.7.4",
+    "@types/three": "^0.169.0",
+    "typescript": "^5.5.3",
+    "vite": "^5.4.1"
+  },
   "dependencies": {
-  "express": "^4.17.1"
+    "three": "^0.169.0"
   }
 }

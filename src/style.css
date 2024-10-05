@@ -1,0 +1,370 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --c-primary: #d1c5ad;
+}
+html,
+body {
+  background: #2f2837;
+  background-color: #0f0f10;
+  font-family: Poppins;
+  font-weight: 400;
+  scroll-behavior: smooth;
+}
+.highlight:hover {
+  position: relative;
+  z-index: 11;
+}
+.highlightAlways {
+  z-index: 11;
+}
+
+#main-content {
+  position: relative;
+  color: #fff;
+}
+
+.sections .section {
+  background: transparent;
+}
+.section .section-title {
+  text-align: center;
+  font-size: 2em;
+  padding: 1em 0;
+}
+/* section one */
+.section.one {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  height: calc(100vh - 50px);
+}
+.section.one .content {
+  max-width: 700px;
+  padding: 20px;
+  margin-left: 8vw;
+  font-size: 24px;
+}
+.section.one .content .cta {
+  margin: 1em 0;
+}
+.cta button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  font-size: 1.3rem;
+  border-radius: 3em;
+  padding: 15px 20px;
+  text-decoration: none;
+  background: #204de2;
+  box-shadow: 0px 4px 20px 14px #0007;
+  color: #fff;
+}
+.section.one .content > div {
+  margin: 0.15em 0;
+}
+#myname {
+  font-size: 2.5em;
+  margin-bottom: 8px;
+  letter-spacing: 8px;
+  z-index: 1000;
+  user-select: none;
+}
+.sub-txt {
+  text-align: justify;
+}
+
+/* section 2  */
+.projects {
+  gap: 4em;
+}
+.project {
+  perspective: 1000px;
+  height: 560px;
+  width: 350px;
+  cursor: pointer;
+}
+.project:hover .card {
+  transform: rotateY(180deg);
+}
+.card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 #0003;
+}
+.card .front,
+.card .back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 6px;
+  overflow: hidden;
+}
+.front {
+  backdrop-filter: saturate(180%) blur(40px);
+  -webkit-backdrop-filter: saturate(180%) blur(40px);
+  background-color: #1d231580;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 0.6em 1.4em;
+}
+.front > * {
+  margin: 0.5em 0;
+}
+.front h2 {
+  font-size: 1.8em;
+  color: #d1c5ad;
+}
+
+.back {
+  z-index: 1;
+  transform: rotateY(180deg);
+}
+.back img {
+  width: 100%;
+}
+
+.front .description {
+  color: #c8c8c8d9;
+  text-align: justify;
+  text-indent: 1.5em;
+  font-weight: 400;
+  line-height: 1.4;
+  font-size: 16px;
+  margin: auto;
+}
+.front .tags {
+  width: 100%;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.front .tag {
+  width: 120px;
+  padding: 12px 0;
+  border-radius: 6px;
+  background: #000;
+  box-shadow: 0 0 3px #000c;
+  text-align: center;
+}
+
+/*  Tech stack  */
+.tech-container {
+  perspective: 800px;
+  width: 90vw;
+  max-width: 1180px;
+  align-items: flex-start;
+  gap: 20px;
+  overflow: hidden;
+  padding: 10px 0;
+  margin: 0 auto;
+  position: relative;
+}
+.tech-container::before,
+.tech-container::after {
+  content: "";
+  width: 20%;
+  max-width: 200px;
+  height: 100%;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  z-index: 2;
+}
+.tech-container::before {
+  left: 0;
+  background: linear-gradient(to right, #0f0f10, #0f0f1000);
+}
+.tech-container::after {
+  right: 0;
+  background: linear-gradient(to left, #0f0f10, #0f0f1000);
+}
+.techs {
+  display: flex;
+  gap: 10px;
+  animation: techMove 36s linear infinite;
+}
+.techs:hover {
+  animation-play-state: paused;
+}
+@keyframes techMove {
+  0% {
+    transform: translateX(calc(50% + min(45vw, 500px)));
+    opacity: 1;
+  }
+  98% {
+    transform: translateX(calc(-50% - min(45vw, 500px)));
+    opacity: 1;
+  }
+  99% {
+    opacity: 0;
+    transform: translateX(calc(-50% - min(45vw, 500px)));
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(calc(50% + min(45vw, 500px)));
+  }
+}
+.tech {
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 0 4px #ccc;
+  border-radius: 8px;
+}
+.tech,
+.tech img {
+  width: 100px;
+  height: 100px;
+}
+
+.canvas-container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 100vh;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.section {
+  height: 100vh;
+}
+.section.one {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.section.one .content > div {
+  margin: 0.15em 0;
+}
+
+/*   contact style   */
+#contact-container {
+  position: fixed;
+  font-size: 16px;
+  right: 3em;
+  bottom: 3em;
+}
+
+.icons {
+  flex-direction: column-reverse;
+  justify-content: end;
+  position: relative;
+}
+.icons .links {
+  background-color: #fff;
+  flex-direction: column;
+  height: 0;
+  overflow: hidden;
+  justify-content: end;
+  border-radius: 1em;
+  transition: height 0.4s ease-in-out;
+  z-index: 1;
+}
+#toggleIcon.active ~ .links {
+  height: 19.5em;
+}
+.icons #toggleIcon {
+  outline: none;
+  border: none;
+  cursor: pointer;
+  background-color: #fff;
+  border-radius: 50%;
+  width: 4.5em;
+  height: 4.5em;
+  padding: 1em;
+  box-shadow: 0 0 40px 20px #000;
+}
+
+.links a {
+  height: 3em;
+  margin: 0.375em 0.75em;
+}
+.links a:first-child {
+  margin-top: 0.75em;
+}
+.links a:last-child {
+  margin-bottom: 0.75em;
+}
+
+.icons svg {
+  --icon-fill-color: #000;
+  pointer-events: none;
+  width: 3em;
+  height: 3em;
+}
+
+#toggleIcon svg {
+  display: none;
+}
+
+#toggleIcon:not(.active) svg:first-child {
+  display: initial;
+}
+#toggleIcon.active svg:last-child {
+  display: initial;
+}
+
+@media screen and (max-width: 1250px) {
+  .projects {
+    gap: 2vw;
+  }
+}
+@media screen and (max-width: 980px) {
+  .projects {
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 600px) {
+  .section.one .content {
+    font-size: 18px;
+    margin: 0;
+    padding: 15px;
+  }
+  #myname {
+    font-size: 1.5em;
+  }
+
+  #contact-container {
+    right: 0.8em;
+    bottom: 0.8em;
+  }
+  #toggleIcon.active ~ .links {
+    height: 18em;
+  }
+  .links a {
+    margin: 0.25em;
+  }
+  .links a:first-child {
+    margin-top: 0.5em;
+  }
+  .links a:last-child {
+    margin-bottom: 0.5em;
+  }
+
+  .tech-container {
+    width: 100%;
+  }
+  .techs {
+    animation-duration: 24s;
+  }
+  .tech,
+  .tech img {
+    width: 60px;
+    height: 60px;
+  }
+}
